@@ -50,6 +50,7 @@ header {
   background-position: center;
   background-size: cover;
   padding: 20px;
+  height: 350px;
 }
 .banner input {
   width: 750px;
@@ -97,10 +98,19 @@ header {
 }
 .smoothies {
   background-color: #f5f5f5;
+  padding: 20px;
+  margin-bottom: 20px;
 }
 .elements p {
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   display: -webkit-box;
   overflow: hidden;
+}
+footer {
+  background-color: #7b4ec4;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  margin-top: 20px;
 }
