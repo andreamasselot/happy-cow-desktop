@@ -5,9 +5,9 @@ const Header = () => {
   return (
     <header>
       <nav className="menu">
-        <div className="logo">
+        <Link to={"/"} className="logo">
           <img src={logo} alt="happycow logo" />
-        </div>
+        </Link>
         <Link to={"/"}>Explore</Link>
         <Link to={"/"}>More</Link>
       </nav>

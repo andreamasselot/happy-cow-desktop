@@ -1,7 +1,12 @@
 const Footer = () => {
   return (
     <>
-      <footer>Footer</footer>
+      <footer>
+        <p>
+          Made at <a href="https://lereacteur.io">Le Reacteur</a> with React by{" "}
+          <a href="https://github.com/andreamasselot">Andréa Masselot</a>
+        </p>
+      </footer>
     </>
   );
 };

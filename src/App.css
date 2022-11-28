@@ -56,11 +56,14 @@ header {
   width: 100%;
 }
 .connexion a {
-  background-color: #7b4ec4;
-  color: white;
-  padding: 10px;
+  background-color: white;
+  color: #7b4ec4;
+  padding: 13px;
+  font-size: 18px;
+  border: solid 2px #7b4ec4;
   border-radius: 10px;
-  font-size: 20px;
+  width: 100px;
+  text-align: center;
 }
 .connexion {
   display: flex;
@@ -106,13 +109,27 @@ header {
   align-items: center;
 }
 .elements {
-  max-width: 300px;
+  max-width: 280px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 95%;
 }
 .elements img {
   height: 200px;
-  width: 300px;
+  width: 280px;
   object-fit: cover;
   border-radius: 10px;
+  margin-bottom: 10px;
+}
+.elements h3 {
+  padding: 2px;
+}
+.elements h2 {
+  display: flex;
+  align-items: center;
+  gap: 5px;
 }
 .elements p {
   -webkit-line-clamp: 3;
@@ -122,7 +139,7 @@ header {
 }
 .background {
   background-color: #f5f5f5;
-  padding: 30px 20px;
+  padding: 10px;
 }
 .carousel-container {
   max-width: 1200px;
@@ -134,4 +151,14 @@ footer {
   text-align: center;
   padding: 20px;
   margin-top: 20px;
+}
+.react-multi-carousel-track {
+  gap: 10px;
+}
+img.label-vege {
+  width: 25px;
+  height: 25px;
+}
+footer p {
+  color: white;
 }

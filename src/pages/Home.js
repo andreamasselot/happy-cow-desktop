@@ -16,7 +16,7 @@ const Home = () => {
     },
     desktop: {
       breakpoint: { max: 3000, min: 1024 },
-      items: 3,
+      items: 4,
     },
     tablet: {
       breakpoint: { max: 1024, min: 464 },
@@ -53,7 +53,11 @@ const Home = () => {
           <h1> Vegan Food Near Me</h1>
           <Link to={"/restaurants"}>View All</Link>
         </div>
-        <Carousel responsive={responsive} className="carousel-container">
+        <Carousel
+          responsive={responsive}
+          className="carousel-container"
+          containerClass="carousel-container"
+        >
           {data
             .filter((elem) => {
               return elem.category === 0;
@@ -67,18 +71,23 @@ const Home = () => {
                     description={elem.description}
                     address={elem.address}
                     rating={elem.rating}
+                    type={elem.type}
                   />
                 </>
               );
             })}
-        </Carousel>{" "}
+        </Carousel>
         <section className="background">
           <div className="section-header container">
             <h1>Vegan Ice Creams, Smoothies</h1>
             <Link to={"/restaurant"}>View All</Link>
           </div>
 
-          <Carousel responsive={responsive} className="carousel-container">
+          <Carousel
+            responsive={responsive}
+            className="carousel-container"
+            containerClass="carousel-container"
+          >
             {data
               .filter((elem) => {
                 return elem.category === 12;
