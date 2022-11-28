@@ -12,6 +12,22 @@ import SignUp from "./pages/SignUp";
 import Offer from "./pages/Offer";
 import Restaurant from "./pages/Restaurant";
 
+import { library } from "@fortawesome/fontawesome-svg-core";
+import {
+  faStar,
+  faChevronRight,
+  faChevronLeft,
+  faMagnifyingGlass,
+  faSeedling,
+} from "@fortawesome/free-solid-svg-icons";
+library.add(
+  faStar,
+  faChevronLeft,
+  faChevronRight,
+  faMagnifyingGlass,
+  faSeedling
+);
+
 function App() {
   return (
     <Router>

@@ -2,7 +2,7 @@ body {
   font-family: "Poppins", sans-serif;
 }
 p {
-  line-height: 130%;
+  line-height: 150%;
   color: #444444;
 }
 a {
@@ -59,7 +59,7 @@ header {
   background-color: white;
   color: #7b4ec4;
   padding: 13px;
-  font-size: 18px;
+  font-size: 16px;
   border: solid 2px #7b4ec4;
   border-radius: 10px;
   width: 100px;
@@ -158,6 +158,15 @@ footer {
 img.label-vege {
   width: 25px;
   height: 25px;
+}
+.yellow-star {
+  color: goldenrod;
+}
+.empty-star {
+  color: grey;
+}
+.ratings {
+  font-size: 12px;
 }
 footer p {
   color: white;
