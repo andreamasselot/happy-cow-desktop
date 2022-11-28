@@ -36,23 +36,62 @@ const Home = () => {
         <section className="carroussels-container container">
           {data.map((elem) => {
             return (
-              <Carroussel
-                image={elem.thumbnail}
-                name={elem.name}
-                description={elem.description}
-                address={elem.address}
-                rating={elem.rating}
-              />
+              <>
+                {elem.category === 0 && (
+                  <Carroussel
+                    image={elem.thumbnail}
+                    name={elem.name}
+                    description={elem.description}
+                    address={elem.address}
+                    rating={elem.rating}
+                  />
+                )}
+              </>
             );
           })}
         </section>
-        <section className="hotels">
+        <section className="smoothies">
           <div className="section-header container">
-            <h1>Vegan Hotels, Homes, Resorts, and B&Bs</h1>
+            <h1>Vegan Ice Creams, Smoothies</h1>
             <button>View All</button>
           </div>
           <div className="carroussels-container container">
-            <Carroussel data={data} />
+            {data.map((elem) => {
+              return (
+                <>
+                  {elem.category === 12 && (
+                    <Carroussel
+                      image={elem.thumbnail}
+                      name={elem.name}
+                      address={elem.address}
+                      rating={elem.rating}
+                    />
+                  )}
+                </>
+              );
+            })}
+          </div>
+        </section>
+        <section className="juices">
+          <div className="section-header container">
+            <h1>Healthy Juices</h1>
+            <button>View All</button>
+          </div>
+          <div className="carroussels-container container">
+            {data.map((elem) => {
+              return (
+                <>
+                  {elem.category === 13 && (
+                    <Carroussel
+                      image={elem.thumbnail}
+                      name={elem.name}
+                      address={elem.address}
+                      rating={elem.rating}
+                    />
+                  )}
+                </>
+              );
+            })}
           </div>
         </section>
       </div>
