@@ -7,6 +7,10 @@ p {
 }
 a {
   text-decoration: none;
+  font-weight: bold;
+}
+button {
+  cursor: pointer;
 }
 .container {
   max-width: 1200px;
@@ -14,10 +18,10 @@ a {
 }
 h1 {
   font-size: 30px;
-  padding: 10px;
+  padding: 10px 10px 10px 0px;
   font-weight: bold;
   color: #444444;
-  margin-top: 50px;
+  margin: 15px 0px 10px 0px;
 }
 h2 {
   font-weight: bold;
@@ -37,13 +41,30 @@ header {
 }
 .menu {
   display: flex;
+  align-items: center;
+  gap: 20px;
 }
 
+.menu a {
+  color: #424242;
+  font-size: 16px;
+}
 .logo {
   width: 200px;
 }
 .logo img {
   width: 100%;
+}
+.connexion a {
+  background-color: #7b4ec4;
+  color: white;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 20px;
+}
+.connexion {
+  display: flex;
+  gap: 30px;
 }
 .banner {
   background-image: url("../src/assets/img/banner.webp");
@@ -51,6 +72,7 @@ header {
   background-size: cover;
   padding: 20px;
   height: 350px;
+  margin-bottom: 30px;
 }
 .banner input {
   width: 750px;
@@ -83,29 +105,28 @@ header {
   justify-content: space-between;
   align-items: center;
 }
-.carroussels-container {
-  flex-wrap: nowrap;
-  display: flex;
-  gap: 20px;
-  overflow-x: scroll;
-  padding: 5px;
+.elements {
+  max-width: 300px;
 }
-.carroussels-container img {
-  border-radius: 20px;
+.elements img {
   height: 200px;
-  width: 280px;
+  width: 300px;
   object-fit: cover;
-}
-.smoothies {
-  background-color: #f5f5f5;
-  padding: 20px;
-  margin-bottom: 20px;
+  border-radius: 10px;
 }
 .elements p {
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   display: -webkit-box;
   overflow: hidden;
+}
+.background {
+  background-color: #f5f5f5;
+  padding: 30px 20px;
+}
+.carousel-container {
+  max-width: 1200px;
+  margin: auto;
 }
 footer {
   background-color: #7b4ec4;

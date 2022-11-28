@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import logo from "../assets/img/happycow-logo.svg";
 
 const Header = () => {
@@ -7,12 +8,12 @@ const Header = () => {
         <div className="logo">
           <img src={logo} alt="happycow logo" />
         </div>
-        <button>Explore</button>
-        <button>More</button>
+        <Link to={"/"}>Explore</Link>
+        <Link to={"/"}>More</Link>
       </nav>
       <div className="connexion">
-        <button>Login</button>
-        <button>Sign Up</button>
+        <Link to={"/login"}>Login</Link>
+        <Link to={"/signup"}>Sign Up</Link>
       </div>
     </header>
   );
