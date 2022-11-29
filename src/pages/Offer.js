@@ -1,15 +1,28 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-// import vegan from "../assets/img/vegan.svg";
-// import vegetarian from "../assets/img/vegetarian.svg";
+import vegan from "../assets/img/vegan.svg";
+import vegetarian from "../assets/img/vegetarian.svg";
+
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 
 const Offer = () => {
-  const [data, setData] = useState();
+  const [data, setData] = useState({ rating: 0 });
+  const [restaurants, setRestaurants] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const { offerId } = useParams();
+
+  const stars = [];
+  for (let i = 0; i < 5; i++) {
+    if (i < data.rating) {
+      const newStar = <FontAwesomeIcon icon="star" className="yellow-star" />;
+      stars.push(newStar);
+    } else {
+      const newStar = <FontAwesomeIcon icon="star" className="empty-star" />;
+      stars.push(newStar);
+    }
+  }
 
   useEffect(() => {
     const fetchData = async () => {
@@ -22,6 +35,7 @@ const Offer = () => {
         });
         console.log(id);
         setData(id);
+        setRestaurants(response.data);
         setIsLoading(false);
       } catch (error) {
         console.log(error.message);
@@ -37,9 +51,26 @@ const Offer = () => {
         <div className="left-section">
           <div>
             <h1>{data.name}</h1>
-            <p>{data.type}</p>
-            <p>{data.rating}</p>
+            <div>
+              {data.type === "vegan" ? (
+                <div className="type-vg-label">
+                  <p>Vegan</p>
+                  <img src={vegan} alt="vegan logo" className="label-vege" />
+                </div>
+              ) : (
+                <div className="type-vr-label">
+                  <p>Vegetarian</p>
+                  <img
+                    src={vegetarian}
+                    alt="vegan logo"
+                    className="label-vege"
+                  />
+                </div>
+              )}
+            </div>
+            <p>{stars}</p>
           </div>
+
           <div className="images-container">
             <img src={data.pictures[0]} alt="meals" />
             <img src={data.pictures[1]} alt="meals" />
@@ -73,14 +104,19 @@ const Offer = () => {
           <p>
             <FontAwesomeIcon icon="phone" className="icons" /> {data.phone}
           </p>
-          <a href={data.website}>
-            <FontAwesomeIcon icon="globe" className="icons" />
-            Website
-          </a>
-          <a href={data.facebook}>
-            <FontAwesomeIcon icon="user" className="icons" />
-            Facebook
-          </a>
+          {data.website && (
+            <a href={data.website}>
+              <FontAwesomeIcon icon="globe" className="icons" />
+              Website
+            </a>
+          )}
+          {data.facebook && (
+            <a href={data.facebook}>
+              <FontAwesomeIcon icon="user" className="icons" />
+              Facebook
+            </a>
+          )}
+
           <div className="payments">
             <p>
               <FontAwesomeIcon icon="chevron-right" className="icons" /> Accepts
@@ -90,6 +126,30 @@ const Offer = () => {
               <FontAwesomeIcon icon="chevron-right" className="icons" />
               Free Wifi
             </p>
+          </div>
+          <div className="nearby-places">
+            <h3>Vegan Places Nearby</h3>
+            {data.nearbyPlacesIds.map((elem) => {
+              const nearby = restaurants.find((place) => {
+                return place.placeId === elem;
+              });
+              return (
+                <>
+                  <div>
+                    <Link to={`/offers/${elem}`}>
+                      <div className="nearby-container">
+                        {nearby.name}
+                        <img
+                          src={nearby.thumbnail}
+                          alt="nearby restaurants"
+                          className="nearby-pictures"
+                        />
+                      </div>
+                    </Link>
+                  </div>
+                </>
+              );
+            })}
           </div>
         </div>
       </section>

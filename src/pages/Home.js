@@ -98,6 +98,8 @@ const Home = () => {
                 return (
                   <>
                     <Carroussel
+                      key={elem.placeId}
+                      id={elem.placeId}
                       image={elem.thumbnail}
                       name={elem.name}
                       address={elem.address}

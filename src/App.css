@@ -183,12 +183,15 @@ footer a {
   padding: 5px;
   justify-content: space-evenly;
   border-radius: 10px;
+  margin-bottom: 5px;
 }
 .type-vg-label p {
   color: white;
+  margin-right: 5px;
 }
 .type-vr-label p {
   color: white;
+  margin-right: 5px;
 }
 .type-vr-label {
   display: flex;
@@ -196,30 +199,32 @@ footer a {
   background-color: #89288f;
   color: white;
   justify-content: space-evenly;
-  width: 90px;
+  width: 130px;
   padding: 5px;
   border-radius: 10px;
+  margin-bottom: 5px;
 }
 .images-container {
-  max-width: 600px;
   display: flex;
   flex-wrap: wrap;
   margin-bottom: 20px;
+  gap: 5px;
 }
 .images-container img {
   width: 300px;
   height: 200px;
   object-fit: cover;
   object-position: center;
+  border-radius: 5px;
 }
 .restaurant-page {
   display: flex;
   justify-content: space-evenly;
-  height: 80vh;
+
   margin-top: 20px;
 }
 .left-section {
-  max-width: 50%;
+  max-width: 55%;
 }
 .right-section {
   display: flex;
@@ -256,4 +261,23 @@ footer a {
   flex-direction: column;
   gap: 10px;
   justify-content: flex-start;
+}
+.nearby-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 10px;
+  padding: 0px 0px 0px 20px;
+}
+.nearby-pictures {
+  width: 200px;
+  height: 100px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 10px;
+}
+.nearby-places h3 {
+  margin-bottom: 20px;
+  font-size: 22px;
+  margin-top: 10px;
 }
