@@ -171,3 +171,56 @@ img.label-vege {
 footer p {
   color: white;
 }
+.type-vg-label {
+  display: flex;
+  align-items: center;
+  background-color: #22820e;
+  width: 90px;
+  padding: 5px;
+  justify-content: space-evenly;
+  border-radius: 10px;
+}
+.type-vg-label p {
+  color: white;
+}
+.type-vr-label p {
+  color: white;
+}
+.type-vr-label {
+  display: flex;
+  align-items: center;
+  background-color: #89288f;
+  color: white;
+  justify-content: space-evenly;
+  width: 90px;
+  padding: 5px;
+  border-radius: 10px;
+}
+.images-container {
+  max-width: 600px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.images-container img {
+  width: 300px;
+  height: 200px;
+  object-fit: cover;
+  object-position: center;
+}
+.restaurant-page {
+  display: flex;
+  justify-content: space-between;
+}
+.left-section {
+  max-width: 50%;
+}
+.right-section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 30px;
+}
+.leaflet-container {
+  width: 300px;
+  height: 300px;
+}
