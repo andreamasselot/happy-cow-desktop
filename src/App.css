@@ -233,6 +233,11 @@ footer a {
   border: solid 1px #7b4ec4;
   margin-bottom: 20px;
 }
+.map-container-explore {
+  height: 90vh;
+  width: 900px;
+  margin: auto;
+}
 .leaflet-container {
   width: 100%;
   height: 100%;

@@ -8,7 +8,7 @@ const Header = () => {
         <Link to={"/"} className="logo">
           <img src={logo} alt="happycow logo" />
         </Link>
-        <Link to={"/"}>Explore</Link>
+        <Link to={"/explore"}>Explore</Link>
         <Link to={"/"}>More</Link>
       </nav>
       <div className="connexion">
