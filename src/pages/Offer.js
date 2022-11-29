@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 // import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // import vegan from "../assets/img/vegan.svg";
 // import vegetarian from "../assets/img/vegetarian.svg";
-import { MapContainer, TileLayer, useMap, Marker, Popup } from "react-leaflet";
+import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 
 const Offer = () => {
   const [data, setData] = useState();
@@ -55,7 +55,7 @@ const Offer = () => {
           <a href={data.facebook}>Facebook</a>
           <div>
             <MapContainer
-              center={[51.505, -0.09]}
+              center={[data.location.lat, data.location.lng]}
               zoom={13}
               scrollWheelZoom={false}
             >
@@ -63,9 +63,9 @@ const Offer = () => {
                 attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
               />
-              <Marker position={[51.505, -0.09]}>
+              <Marker position={[data.location.lat, data.location.lng]}>
                 <Popup>
-                  A pretty CSS3 popup. <br /> Easily customizable.
+                  {data.name} <br /> {data.address}
                 </Popup>
               </Marker>
             </MapContainer>
