@@ -128,7 +128,7 @@ const Offer = () => {
             </p>
           </div>
           <div className="nearby-places">
-            <h3>Vegan Places Nearby</h3>
+            <h3>Places Nearby :</h3>
             {data.nearbyPlacesIds.map((elem) => {
               const nearby = restaurants.find((place) => {
                 return place.placeId === elem;
@@ -139,6 +139,8 @@ const Offer = () => {
                     <Link to={`/offers/${elem}`}>
                       <div className="nearby-container">
                         {nearby.name}
+                        <p className="address-nearby">{nearby.address}</p>
+
                         <img
                           src={nearby.thumbnail}
                           alt="nearby restaurants"
