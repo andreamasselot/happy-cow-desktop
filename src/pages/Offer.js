@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // import vegan from "../assets/img/vegan.svg";
 // import vegetarian from "../assets/img/vegetarian.svg";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
@@ -49,14 +49,10 @@ const Offer = () => {
           <p>{data.description}</p>
         </div>
         <div className="right-section">
-          <p>{data.address}</p>
-          <p>{data.phone}</p>
-          <a href={data.website}>Website</a>
-          <a href={data.facebook}>Facebook</a>
-          <div>
+          <div className="map-container">
             <MapContainer
               center={[data.location.lat, data.location.lng]}
-              zoom={13}
+              zoom={14}
               scrollWheelZoom={false}
             >
               <TileLayer
@@ -69,6 +65,31 @@ const Offer = () => {
                 </Popup>
               </Marker>
             </MapContainer>
+          </div>
+          <p>
+            <FontAwesomeIcon icon="location-dot" className="icons" />
+            {data.address}
+          </p>
+          <p>
+            <FontAwesomeIcon icon="phone" className="icons" /> {data.phone}
+          </p>
+          <a href={data.website}>
+            <FontAwesomeIcon icon="globe" className="icons" />
+            Website
+          </a>
+          <a href={data.facebook}>
+            <FontAwesomeIcon icon="user" className="icons" />
+            Facebook
+          </a>
+          <div className="payments">
+            <p>
+              <FontAwesomeIcon icon="chevron-right" className="icons" /> Accepts
+              credit cards
+            </p>
+            <p>
+              <FontAwesomeIcon icon="chevron-right" className="icons" />
+              Free Wifi
+            </p>
           </div>
         </div>
       </section>

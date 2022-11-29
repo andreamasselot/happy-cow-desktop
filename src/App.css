@@ -8,6 +8,7 @@ p {
 a {
   text-decoration: none;
   font-weight: bold;
+  color: #7b4ec4;
 }
 button {
   cursor: pointer;
@@ -171,6 +172,9 @@ img.label-vege {
 footer p {
   color: white;
 }
+footer a {
+  color: white;
+}
 .type-vg-label {
   display: flex;
   align-items: center;
@@ -200,6 +204,7 @@ footer p {
   max-width: 600px;
   display: flex;
   flex-wrap: wrap;
+  margin-bottom: 20px;
 }
 .images-container img {
   width: 300px;
@@ -209,7 +214,9 @@ footer p {
 }
 .restaurant-page {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
+  height: 80vh;
+  margin-top: 20px;
 }
 .left-section {
   max-width: 50%;
@@ -220,7 +227,28 @@ footer p {
   gap: 10px;
   margin-top: 30px;
 }
-.leaflet-container {
+.map-container {
   width: 300px;
   height: 300px;
+  border: solid 1px #7b4ec4;
+  margin-bottom: 20px;
+}
+.leaflet-container {
+  width: 100%;
+  height: 100%;
+}
+.icons {
+  margin-right: 10px;
+  color: #424242;
+}
+.payments {
+  border: none;
+  border-bottom: 1px solid #777777;
+  border-top: 1px solid #777777;
+  margin-top: 30px;
+  padding: 15px 0px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: flex-start;
 }

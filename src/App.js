@@ -18,14 +18,20 @@ import {
   faChevronRight,
   faChevronLeft,
   faMagnifyingGlass,
-  faSeedling,
+  faLocationDot,
+  faPhone,
+  faUser,
+  faGlobe,
 } from "@fortawesome/free-solid-svg-icons";
 library.add(
   faStar,
   faChevronLeft,
   faChevronRight,
   faMagnifyingGlass,
-  faSeedling
+  faUser,
+  faLocationDot,
+  faPhone,
+  faGlobe
 );
 
 function App() {
