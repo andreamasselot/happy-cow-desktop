@@ -1,7 +1,8 @@
+import axios from "axios";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
-const SignUp = () => {
+const SignUp = (props) => {
   const [email, setEmail] = useState("");
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -20,6 +21,19 @@ const SignUp = () => {
   };
   const handleSubmit = async (event) => {
     event.preventDefault();
+    if (!email || !username || !password) {
+      console.log("missing fields");
+      return;
+    }
+    const response = await axios.post(
+      `https://site--happycow--fhdp7f7ffy5p.code.run/user/signup`,
+      {
+        email: email,
+        username: username,
+        password: password,
+      }
+    );
+    props.handleToken(response.data.token);
   };
   return (
     <>

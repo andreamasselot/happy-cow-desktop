@@ -70,6 +70,15 @@ header {
   display: flex;
   gap: 30px;
 }
+.log-out button {
+  border: none;
+  padding: 13px;
+  background-color: #89288f;
+  border-radius: 10px;
+  color: white;
+  font-size: 16px;
+  margin-right: 10px;
+}
 .banner {
   background-image: url("../src/assets/img/banner.webp");
   background-position: center;

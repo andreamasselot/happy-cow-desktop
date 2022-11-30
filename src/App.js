@@ -1,6 +1,6 @@
 import "./App.css";
 import "./assets/fonts/stylesheet.css";
-
+import Cookies from "js-cookie";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import Header from "./components/Header";
@@ -23,6 +23,7 @@ import {
   faUser,
   faGlobe,
 } from "@fortawesome/free-solid-svg-icons";
+import { useState } from "react";
 library.add(
   faStar,
   faChevronLeft,
@@ -35,16 +36,28 @@ library.add(
 );
 
 function App() {
+  const [token, setToken] = useState(Cookies.get("token") || null);
+
+  const handleToken = (token) => {
+    if (token) {
+      setToken(token);
+      Cookies.set("token", token, { expires: 7 });
+    } else {
+      setToken(null);
+      Cookies.remove("token");
+    }
+  };
+
   return (
     <Router>
-      <Header />
+      <Header token={token} handleToken={handleToken} />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/offers/:offerId" element={<Offer />} />
         <Route path="/offers/restaurant" element={<Restaurants />} />
         <Route path="/explore" element={<Explore />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/signup" element={<SignUp />} />
+        <Route path="/login" element={<Login handleToken={handleToken} />} />
+        <Route path="/signup" element={<SignUp handleToken={handleToken} />} />
       </Routes>
       <Footer />
     </Router>

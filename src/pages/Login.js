@@ -1,7 +1,8 @@
+import axios from "axios";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
-const Login = () => {
+const Login = (props) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -15,6 +16,14 @@ const Login = () => {
   };
   const handleSubmit = async (event) => {
     event.preventDefault();
+    const response = await axios.post(
+      `https://site--happycow--fhdp7f7ffy5p.code.run/user/login`,
+      {
+        email: email,
+        password: password,
+      }
+    );
+    props.handleToken(response.data.token);
   };
 
   return (
