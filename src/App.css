@@ -151,7 +151,6 @@ footer {
   color: white;
   text-align: center;
   padding: 20px;
-  margin-top: 20px;
 }
 .react-multi-carousel-track {
   gap: 10px;
@@ -284,4 +283,71 @@ footer a {
   margin-bottom: 20px;
   font-size: 22px;
   margin-top: 10px;
+}
+.modal {
+  border-radius: 20px;
+  display: flex;
+  width: 800px;
+  justify-content: space-between;
+  gap: 50px;
+  background-color: white;
+  padding: 20px;
+}
+.modal input {
+  width: 90%;
+  font-size: 15px;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid lightgray;
+}
+.modal button {
+  width: 40%;
+  background-color: #7b4ec4;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 5px;
+  font-size: 18px;
+}
+.login-right form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 15px;
+}
+.login-right {
+  width: 50%;
+}
+.login-left {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  color: white;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background-image: url("../src/assets/img/login.jpg");
+  background-position: center;
+  background-size: cover;
+}
+.login-left h2,
+p {
+  color: white;
+}
+.modal-body {
+  background-color: #f2eaff;
+  height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.connexion-choice {
+  display: flex;
+  padding: 20px;
+  justify-content: space-evenly;
+  font-size: 25px;
+}
+.connexion-button {
+  display: flex;
+  justify-content: center;
 }

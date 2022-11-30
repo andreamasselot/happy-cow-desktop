@@ -70,13 +70,19 @@ const Offer = () => {
             </div>
             <p>{stars}</p>
           </div>
+          {data.pictures === [] ? (
+            <div>
+              <img src={data.thumbnail} alt="restaurant" />
+            </div>
+          ) : (
+            <div className="images-container">
+              <img src={data.pictures[0]} alt="meals" />
+              <img src={data.pictures[1]} alt="meals" />
+              <img src={data.pictures[2]} alt="meals" />
+              <img src={data.pictures[3]} alt="meals" />
+            </div>
+          )}
 
-          <div className="images-container">
-            <img src={data.pictures[0]} alt="meals" />
-            <img src={data.pictures[1]} alt="meals" />
-            <img src={data.pictures[2]} alt="meals" />
-            <img src={data.pictures[3]} alt="meals" />
-          </div>
           <p>{data.description}</p>
         </div>
         <div className="right-section">
