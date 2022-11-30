@@ -13,6 +13,9 @@ const Login = () => {
     const value = event.target.value;
     setPassword(value);
   };
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+  };
 
   return (
     <div className="modal-body">
@@ -28,7 +31,7 @@ const Login = () => {
             <Link to={"/signup"}>Sign Up</Link>
           </div>
 
-          <form>
+          <form onSubmit={handleSubmit}>
             <label for="email">Email</label>
             <input
               type="email"
@@ -45,7 +48,7 @@ const Login = () => {
               onChange={handlePasswordChange}
             />
             <div className="connexion-button">
-              <button type="submit">Login</button>
+              <button type="submit">Next</button>
             </div>
           </form>
         </div>
