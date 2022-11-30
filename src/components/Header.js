@@ -1,7 +1,43 @@
 import { Link } from "react-router-dom";
 import logo from "../assets/img/happycow-logo.svg";
+import Modal from "react-modal";
+import { useState } from "react";
+import Login from "../pages/Login";
+import SignUp from "../pages/SignUp";
+
+const customStyles = {
+  overlay: {
+    zIndex: 1001,
+  },
+  content: {
+    top: "50%",
+    left: "50%",
+    right: "auto",
+    bottom: "auto",
+    marginRight: "-50%",
+    transform: "translate(-50%, -50%)",
+  },
+};
+
+Modal.setAppElement("#root");
 
 const Header = (props) => {
+  const [modalIsOpen, setIsOpen] = useState(false);
+  const [modal2IsOpen, setModal2IsOpen] = useState(false);
+
+  const openModal = () => {
+    setIsOpen(true);
+  };
+  const closeModal = () => {
+    setIsOpen(false);
+  };
+  const openModal2 = () => {
+    setModal2IsOpen(true);
+  };
+  const closeModal2 = () => {
+    setModal2IsOpen(false);
+  };
+
   return (
     <header>
       <nav className="menu">
@@ -13,12 +49,46 @@ const Header = (props) => {
       </nav>
       {props.token ? (
         <div className="log-out">
-          <button>Log Out</button>
+          <button
+            onClick={() => {
+              props.handleToken();
+            }}
+          >
+            Log Out
+          </button>
         </div>
       ) : (
         <div className="connexion">
-          <Link to={"/login"}>Login</Link>
-          <Link to={"/signup"}>Sign Up</Link>
+          <button
+            onClick={() => {
+              openModal();
+            }}
+          >
+            Login
+          </button>
+          <Modal
+            isOpen={modalIsOpen}
+            style={customStyles}
+            onRequestClose={closeModal}
+          >
+            <Login handleToken={props.handleToken} />
+          </Modal>
+
+          <button
+            onClick={() => {
+              openModal2();
+            }}
+          >
+            Sign Up
+          </button>
+
+          <Modal
+            isOpen={modal2IsOpen}
+            style={customStyles}
+            onRequestClose={closeModal2}
+          >
+            <SignUp handleToken={props.handleToken} />
+          </Modal>
         </div>
       )}
     </header>

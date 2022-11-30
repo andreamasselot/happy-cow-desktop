@@ -56,7 +56,7 @@ header {
 .logo img {
   width: 100%;
 }
-.connexion a {
+.connexion button {
   background-color: white;
   color: #7b4ec4;
   padding: 13px;
@@ -340,24 +340,22 @@ footer a {
   background-position: center;
   background-size: cover;
 }
-.login-left h2,
-p {
-  color: white;
-  text-shadow: 2px 2px 7px black;
-}
+
 .login-left p {
   font-size: 20px;
+  color: white;
+  text-shadow: 2px 2px 8px black;
 }
 .login-left h2 {
   font-size: 25px;
+  color: white;
+  text-shadow: 2px 2px 8px black;
 }
 .login-right p {
   color: #7b4ec4;
-  text-shadow: none;
 }
 .modal-body {
-  background-color: #f2eaff;
-  height: 90vh;
+  background-color: transparent;
   display: flex;
   align-items: center;
   justify-content: center;
