@@ -1,5 +1,6 @@
-#HappyCow Replica
-netlify [https://happycow-replica.netlify.app]
+# HappyCow Replica
+
+[View the final result on netlify](https://happycow-replica.netlify.app)
 
 # Getting Started with Create React App
 

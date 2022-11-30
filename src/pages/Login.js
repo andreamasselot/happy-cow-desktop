@@ -35,9 +35,9 @@ const Login = (props) => {
         </div>
         <div className="login-right">
           <div className="connexion-choice">
-            <Link to={"/login"}>Login</Link>
+            <button>Login</button>
             <p>Or</p>
-            <Link to={"/signup"}>Sign Up</Link>
+            <button>Sign Up</button>
           </div>
 
           <form onSubmit={handleSubmit}>
