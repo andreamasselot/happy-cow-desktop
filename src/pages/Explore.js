@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
+import L from "leaflet";
 
 const Explore = () => {
   const [data, setData] = useState([]);
@@ -65,7 +66,13 @@ const Explore = () => {
               return (
                 <Marker position={[elem.location.lat, elem.location.lng]}>
                   <Popup>
-                    Coucou <br /> Salut
+                    <h3>{elem.name}</h3>
+                    <p>{elem.address.split(",")[0]}</p>
+                    <img
+                      src={elem.thumbnail}
+                      alt="restaurants"
+                      className="popup-image"
+                    />
                   </Popup>
                 </Marker>
               );
