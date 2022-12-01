@@ -1,10 +1,11 @@
 import axios from "axios";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Login = (props) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate();
 
   const handleEmailChange = async (event) => {
     const value = event.target.value;
@@ -24,6 +25,7 @@ const Login = (props) => {
       }
     );
     props.handleToken(response.data.token);
+    navigate("/");
   };
 
   return (
@@ -35,9 +37,23 @@ const Login = (props) => {
         </div>
         <div className="login-right">
           <div className="connexion-choice">
-            <button>Login</button>
+            <button
+              onClick={() => {
+                props.closeModal2();
+                props.openModal();
+              }}
+            >
+              Login
+            </button>
             <p>Or</p>
-            <button>Sign Up</button>
+            <button
+              onClick={() => {
+                props.closeModal();
+                props.openModal2();
+              }}
+            >
+              Sign Up
+            </button>
           </div>
 
           <form onSubmit={handleSubmit}>

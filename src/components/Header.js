@@ -71,7 +71,11 @@ const Header = (props) => {
             style={customStyles}
             onRequestClose={closeModal}
           >
-            <Login handleToken={props.handleToken} />
+            <Login
+              handleToken={props.handleToken}
+              openModal2={openModal2}
+              closeModal={closeModal}
+            />
           </Modal>
 
           <button
@@ -87,7 +91,11 @@ const Header = (props) => {
             style={customStyles}
             onRequestClose={closeModal2}
           >
-            <SignUp handleToken={props.handleToken} />
+            <SignUp
+              handleToken={props.handleToken}
+              openModal={openModal}
+              closeModal2={closeModal2}
+            />
           </Modal>
         </div>
       )}

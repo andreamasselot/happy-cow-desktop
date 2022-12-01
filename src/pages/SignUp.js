@@ -1,12 +1,12 @@
 import axios from "axios";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const SignUp = (props) => {
   const [email, setEmail] = useState("");
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-
+  const navigate = useNavigate();
   const handleEmailChange = async (event) => {
     const value = event.target.value;
     setEmail(value);
@@ -34,6 +34,7 @@ const SignUp = (props) => {
       }
     );
     props.handleToken(response.data.token);
+    navigate("/");
   };
   return (
     <>
@@ -47,9 +48,23 @@ const SignUp = (props) => {
           </div>
           <div className="login-right">
             <div className="connexion-choice">
-              <Link to={"/login"}>Login</Link>
+              <button
+                onClick={() => {
+                  props.closeModal2();
+                  props.openModal();
+                }}
+              >
+                Login
+              </button>
               <p>Or</p>
-              <Link to={"/signup"}>Sign Up</Link>
+              <button
+                onClick={() => {
+                  props.closeModal();
+                  props.openModal2();
+                }}
+              >
+                Sign Up
+              </button>
             </div>
 
             <form onSubmit={handleSubmit}>
