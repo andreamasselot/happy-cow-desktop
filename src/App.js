@@ -7,8 +7,8 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import Explore from "./pages/Explore";
-import Login from "./pages/Login";
-import SignUp from "./pages/SignUp";
+import Login from "./components/Login";
+import SignUp from "./components/SignUp";
 import Offer from "./pages/Offer";
 import Restaurants from "./pages/Restaurants";
 

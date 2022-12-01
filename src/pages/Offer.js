@@ -28,7 +28,7 @@ const Offer = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `https://res.cloudinary.com/lereacteur-apollo/raw/upload/v1575242111/10w-full-stack/Scraping/restaurants.json`
+          `https://site--happycow--fhdp7f7ffy5p.code.run/restaurants`
         );
         const id = response.data.find((elem) => {
           return elem.placeId === parseInt(offerId);

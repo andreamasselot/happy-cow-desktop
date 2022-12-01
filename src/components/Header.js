@@ -2,8 +2,8 @@ import { Link } from "react-router-dom";
 import logo from "../assets/img/happycow-logo.svg";
 import Modal from "react-modal";
 import { useState } from "react";
-import Login from "../pages/Login";
-import SignUp from "../pages/SignUp";
+import Login from "./Login";
+import SignUp from "./SignUp";
 
 const customStyles = {
   overlay: {
