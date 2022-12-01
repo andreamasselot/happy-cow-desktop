@@ -246,11 +246,7 @@ footer a {
   border: solid 1px #7b4ec4;
   margin-bottom: 20px;
 }
-.map-container-explore {
-  height: 90vh;
-  width: 900px;
-  margin: auto;
-}
+
 .leaflet-container {
   width: 100%;
   height: 100%;
@@ -370,4 +366,47 @@ footer a {
 .connexion-button {
   display: flex;
   justify-content: center;
+}
+.explore-container {
+  display: flex;
+  padding: 20px;
+}
+.map-container-explore {
+  height: 100vh;
+  width: 50%;
+  margin: auto;
+}
+.explore-left {
+  width: 50%;
+  height: 100vh;
+  overflow: scroll;
+}
+.vegan-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.restaurants-info {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  flex-wrap: wrap;
+}
+.explore-images {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  object-position: center;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+.explore-title {
+  border: 2px solid turquoise;
+  margin-bottom: 20px;
+}
+.explore-description {
+  padding: 10px 10px 10px 0px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
 }
