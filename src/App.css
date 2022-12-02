@@ -45,7 +45,10 @@ header {
   align-items: center;
   gap: 20px;
 }
-
+.logo-link {
+  display: flex;
+  gap: 20px;
+}
 .menu a {
   color: #424242;
   font-size: 16px;
@@ -94,9 +97,9 @@ header {
   border: none;
   font-size: 18px;
   font-family: "Poppins";
-  margin-bottom: 100px;
   box-shadow: 2px 2px 12px black;
 }
+
 .banner h2 {
   color: white;
   font-size: 36px;
@@ -105,6 +108,24 @@ header {
   text-align: center;
   margin-top: 50px;
   text-shadow: 2px 2px 8px black;
+}
+.input-banner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 100px;
+  gap: 20px;
+}
+.input-banner button {
+  width: 15%;
+  background-color: white;
+  color: #444444;
+  border: none;
+  border-radius: 5px;
+  padding: 5px;
+  font-size: 20px;
+  box-shadow: 2px 2px 10px black;
 }
 .banner-infos {
   display: flex;
@@ -274,11 +295,9 @@ footer a {
   padding: 15px;
   border: 1px solid lightgray;
   border-radius: 10px;
-  width: 70%;
 }
 
 .nearby-pictures {
-  width: 230px;
   height: 100px;
   object-fit: cover;
   object-position: center;
@@ -414,4 +433,79 @@ footer a {
 .popup-image {
   width: 100px;
   border-radius: 10px;
+}
+@media only screen and (max-width: 900px) {
+  body {
+    max-width: 900px;
+    margin: auto;
+  }
+  section {
+    padding: 0px 10px;
+  }
+  .banner input {
+    max-width: 90%;
+  }
+  .homepage-section {
+    margin: auto;
+  }
+  .images-container img {
+    width: 180px;
+    height: 180px;
+  }
+  .left-section {
+    padding-left: 10px;
+  }
+  .left-section p {
+    max-width: 90%;
+  }
+  .nearby-container {
+    max-width: 99%;
+    margin: auto;
+    margin-bottom: 5px;
+  }
+  .map-container {
+    width: 100%;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .menu {
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+  }
+  .connexion {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .connexion button {
+    padding: 5px;
+  }
+  .logo-link {
+    padding-left: 10px;
+  }
+  .banner-infos h2 {
+    width: 100%;
+    padding: 2px;
+  }
+  .restaurant-page {
+    flex-direction: column;
+  }
+  .left-section {
+    max-width: 100%;
+    padding-left: 0px;
+  }
+  .left-section p {
+    max-width: 100%;
+  }
+  .images-container {
+    justify-content: center;
+  }
+  .images-container img {
+    width: 50%;
+    height: 150px;
+    flex: 1;
+  }
+  .hidden {
+    display: none;
+  }
 }

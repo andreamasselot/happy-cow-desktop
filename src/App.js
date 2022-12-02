@@ -9,8 +9,8 @@ import Home from "./pages/Home";
 import Explore from "./pages/Explore";
 import Login from "./components/Login";
 import SignUp from "./components/SignUp";
-import Offer from "./pages/Offer";
-import Restaurants from "./pages/Restaurants";
+import Place from "./pages/Place";
+import Restaurant from "./pages/Restaurants";
 
 import { library } from "@fortawesome/fontawesome-svg-core";
 import {
@@ -53,8 +53,8 @@ function App() {
       <Header token={token} handleToken={handleToken} />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/offers/:offerId" element={<Offer />} />
-        <Route path="/offers/restaurant" element={<Restaurants />} />
+        <Route path="/offers/:offerId" element={<Place />} />
+        <Route path="/offers/restaurant" element={<Restaurant />} />
         <Route path="/explore" element={<Explore />} />
         <Route path="/login" element={<Login handleToken={handleToken} />} />
         <Route path="/signup" element={<SignUp handleToken={handleToken} />} />

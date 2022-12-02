@@ -44,8 +44,10 @@ const Header = (props) => {
         <Link to={"/"} className="logo">
           <img src={logo} alt="happycow logo" />
         </Link>
-        <Link to={"/explore"}>Explore</Link>
-        <Link to={"/"}>More</Link>
+        <div className="logo-link">
+          <Link to={"/explore"}>Explore</Link>
+          <Link to={"/"}>More</Link>
+        </div>
       </nav>
       {props.token ? (
         <div className="log-out">

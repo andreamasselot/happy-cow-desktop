@@ -7,7 +7,7 @@ import vegetarian from "../assets/img/vegetarian.svg";
 
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 
-const Offer = () => {
+const Place = () => {
   const [data, setData] = useState({ rating: 0 });
   const [restaurants, setRestaurants] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -165,4 +165,4 @@ const Offer = () => {
   );
 };
 
-export default Offer;
+export default Place;

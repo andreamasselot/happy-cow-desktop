@@ -1,9 +1,9 @@
-const Restaurants = () => {
+const Restaurant = () => {
   return (
     <>
-      <div>Restaurants</div>
+      <div>Restaurant</div>
     </>
   );
 };
 
-export default Restaurants;
+export default Restaurant;

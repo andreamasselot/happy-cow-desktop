@@ -49,40 +49,47 @@ const Home = () => {
     <>
       <Banner />
       <div>
-        <div className="section-header container">
-          <h1> Vegan Food Near Me</h1>
-          <Link to={"/restaurants"}>View All</Link>
-        </div>
-        <Carousel
-          responsive={responsive}
-          className="carousel-container"
-          containerClass="carousel-container"
-        >
-          {data
-            .filter((elem) => {
-              return elem.category === 0;
-            })
-            .map((elem) => {
-              return (
-                <>
-                  <Carroussel
-                    key={elem.placeId}
-                    id={elem.placeId}
-                    image={elem.thumbnail}
-                    name={elem.name}
-                    description={elem.description}
-                    address={elem.address}
-                    rating={elem.rating}
-                    type={elem.type}
-                  />
-                </>
-              );
-            })}
-        </Carousel>
-        <section className="background">
+        <section className="homepage-section">
+          <div className="section-header container">
+            <h1> Vegan Food Near Me</h1>
+            <Link to={"/offers/restaurant"} className={"hidden"}>
+              View All
+            </Link>
+          </div>
+          <Carousel
+            responsive={responsive}
+            className="carousel-container"
+            containerClass="carousel-container"
+          >
+            {data
+              .filter((elem) => {
+                return elem.category === 0;
+              })
+              .map((elem) => {
+                return (
+                  <>
+                    <Carroussel
+                      key={elem.placeId}
+                      id={elem.placeId}
+                      image={elem.thumbnail}
+                      name={elem.name}
+                      description={elem.description}
+                      address={elem.address}
+                      rating={elem.rating}
+                      type={elem.type}
+                    />
+                  </>
+                );
+              })}
+          </Carousel>
+        </section>
+
+        <section className="background homepage-section">
           <div className="section-header container">
             <h1>Vegan Ice Creams, Smoothies</h1>
-            <Link to={"/restaurant"}>View All</Link>
+            <Link to={"/offers/restaurant"} className={"hidden"}>
+              View All
+            </Link>
           </div>
 
           <Carousel
@@ -103,6 +110,7 @@ const Home = () => {
                       image={elem.thumbnail}
                       name={elem.name}
                       address={elem.address}
+                      description={elem.description}
                       rating={elem.rating}
                     />
                   </>
