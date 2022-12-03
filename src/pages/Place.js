@@ -70,7 +70,7 @@ const Place = () => {
             </div>
             <p>{stars}</p>
           </div>
-          {data.pictures === [] ? (
+          {data.pictures.length === 0 ? (
             <div>
               <img src={data.thumbnail} alt="restaurant" />
             </div>
@@ -80,6 +80,12 @@ const Place = () => {
               <img src={data.pictures[1]} alt="meals" />
               <img src={data.pictures[2]} alt="meals" />
               <img src={data.pictures[3]} alt="meals" />
+              <Link
+                to={`/offers/restaurant/${data.placeId}`}
+                className={"link-to-all-pictures"}
+              >
+                All Photos
+              </Link>
             </div>
           )}
 

@@ -33,6 +33,9 @@ h3 {
   color: #777777;
   font-weight: bold;
 }
+span {
+  color: #7b4ec4;
+}
 header {
   border-bottom: 5px solid #7b4ec4;
   display: flex;
@@ -238,6 +241,20 @@ footer a {
   flex-wrap: wrap;
   margin-bottom: 20px;
   gap: 5px;
+  position: relative;
+}
+.link-to-all-pictures {
+  padding: 8px 15px;
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  position: absolute;
+  bottom: 5px;
+  left: 5px;
+}
+.link-to-all-pictures:hover {
+  background-color: rgba(0, 0, 0, 0.9);
+  transition: all 0.3s ease;
 }
 .images-container img {
   width: 300px;
@@ -251,6 +268,30 @@ footer a {
   justify-content: space-evenly;
 
   margin-top: 20px;
+}
+.all-pictures-container {
+  max-width: 1200px;
+  flex-wrap: wrap;
+  margin: auto;
+  display: flex;
+  gap: 20px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  height: 100vh;
+  margin: 20px auto;
+}
+.images-all-pictures {
+  width: 380px;
+  height: 300px;
+}
+
+.all-pictures-container img {
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+
+  object-fit: cover;
+  object-position: center;
 }
 .left-section {
   max-width: 55%;

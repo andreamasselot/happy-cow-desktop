@@ -54,7 +54,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/offers/:offerId" element={<Place />} />
-        <Route path="/offers/restaurant" element={<Restaurant />} />
+        <Route path="/offers/restaurant/:offerId" element={<Restaurant />} />
         <Route path="/explore" element={<Explore />} />
         <Route path="/login" element={<Login handleToken={handleToken} />} />
         <Route path="/signup" element={<SignUp handleToken={handleToken} />} />
