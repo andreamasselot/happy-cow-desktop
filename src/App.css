@@ -434,6 +434,19 @@ footer a {
   width: 100px;
   border-radius: 10px;
 }
+.all-restaurants {
+  background-color: red;
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: auto;
+  gap: 30px;
+}
+.all-pictures {
+  flex: 1;
+  width: 300px;
+  height: 300px;
+}
 @media only screen and (max-width: 900px) {
   body {
     max-width: 900px;

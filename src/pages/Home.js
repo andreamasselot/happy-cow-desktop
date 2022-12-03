@@ -52,7 +52,7 @@ const Home = () => {
         <section className="homepage-section">
           <div className="section-header container">
             <h1> Vegan Food Near Me</h1>
-            <Link to={"/offers/restaurant"} className={"hidden"}>
+            <Link to={`/explore`} className={"hidden"}>
               View All
             </Link>
           </div>
@@ -87,7 +87,7 @@ const Home = () => {
         <section className="background homepage-section">
           <div className="section-header container">
             <h1>Vegan Ice Creams, Smoothies</h1>
-            <Link to={"/offers/restaurant"} className={"hidden"}>
+            <Link to={"/explore"} className={"hidden"}>
               View All
             </Link>
           </div>

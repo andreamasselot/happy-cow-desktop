@@ -1,16 +1,24 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
+import { useSearchParams } from "react-router-dom";
 
 const Explore = () => {
+  let [searchParams, setSearchParams] = useSearchParams();
+
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [search, setSearch] = useState(searchParams.get("name") || "");
 
+  const handleSearch = (event) => {
+    const value = event.target.value;
+    setSearch(value);
+  };
   useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `https://site--happycow--fhdp7f7ffy5p.code.run/restaurants`
+          `https://site--happycow--fhdp7f7ffy5p.code.run/restaurants?name=${search}`
         );
         console.log(response.data);
         setData(response.data);
@@ -20,7 +28,7 @@ const Explore = () => {
       }
     };
     fetchData();
-  }, []);
+  }, [search]);
 
   return isLoading ? (
     <p>Loading...</p>
@@ -30,7 +38,12 @@ const Explore = () => {
         <div className="explore-left">
           <div className="explore-title">
             <h1>Places Nearby</h1>
-            <input type="text" placeholder="Search" />
+            <input
+              type="text"
+              placeholder="Search"
+              onChange={handleSearch}
+              value={search}
+            />
           </div>
           <div className="vegan-container">
             {data.map((elem) => {

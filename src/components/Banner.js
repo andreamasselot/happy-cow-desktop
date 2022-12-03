@@ -7,7 +7,6 @@ const Banner = () => {
   const handleSearch = (event) => {
     const value = event.target.value;
     setSearch(value);
-    navigate("/explore");
   };
   return (
     <>
@@ -23,7 +22,7 @@ const Banner = () => {
             />
             <button
               onClick={() => {
-                navigate("/explore");
+                navigate(`/explore?name=${search}`);
               }}
             >
               Search
