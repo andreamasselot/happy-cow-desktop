@@ -13,6 +13,7 @@ const Explore = () => {
   const handleSearch = (event) => {
     const value = event.target.value;
     setSearch(value);
+    setSearchParams({ name: value });
   };
   useEffect(() => {
     const fetchData = async () => {
