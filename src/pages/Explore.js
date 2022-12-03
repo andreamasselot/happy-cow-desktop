@@ -1,8 +1,7 @@
 import axios from "axios";
-import { useCallback, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import { useSearchParams } from "react-router-dom";
-import debounce from "lodash.debounce";
 
 const Explore = () => {
   let [searchParams, setSearchParams] = useSearchParams();
@@ -16,8 +15,6 @@ const Explore = () => {
     setSearch(value);
     setSearchParams({ name: value });
   };
-  const debounced = useCallback(debounce(handleSearch, 500), []);
-
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -42,7 +39,12 @@ const Explore = () => {
         <div className="explore-left">
           <div className="explore-title">
             <h1>Places Nearby</h1>
-            <input type="text" placeholder="Search" onChange={debounced} />
+            <input
+              type="text"
+              placeholder="Search"
+              onChange={handleSearch}
+              value={search}
+            />
           </div>
           <div className="vegan-container">
             {data.map((elem) => {
