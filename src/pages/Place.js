@@ -4,12 +4,12 @@ import { Link, useParams } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import vegan from "../assets/img/vegan.svg";
 import vegetarian from "../assets/img/vegetarian.svg";
+import photo from "../assets/img/banner.webp";
 
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 
 const Place = () => {
   const [data, setData] = useState({ rating: 0 });
-  const [restaurants, setRestaurants] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const { offerId } = useParams();
 
@@ -28,14 +28,10 @@ const Place = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `https://site--happycow--fhdp7f7ffy5p.code.run/restaurants`
+          `https://site--happycow--fhdp7f7ffy5p.code.run/restaurants/${offerId}`
         );
-        const id = response.data.find((elem) => {
-          return elem.placeId === parseInt(offerId);
-        });
-        console.log(id);
-        setData(id);
-        setRestaurants(response.data);
+
+        setData(response.data);
         setIsLoading(false);
       } catch (error) {
         console.log(error.message);
@@ -141,23 +137,24 @@ const Place = () => {
           </div>
           <div className="nearby-places">
             <h3>Places Nearby :</h3>
-            {data.nearbyPlacesIds.map((elem) => {
-              const nearby = restaurants.find((place) => {
-                return place.placeId === elem;
-              });
+            {data.nearbyPlaces.map((nearby) => {
               return (
                 <>
                   <div>
-                    <Link to={`/offers/${elem}`}>
+                    <Link to={`/offers/${nearby.placeId}`}>
                       <div className="nearby-container">
                         {nearby.name}
                         <p className="address-nearby">{nearby.address}</p>
 
-                        <img
-                          src={nearby.thumbnail}
-                          alt="nearby restaurants"
-                          className="nearby-pictures"
-                        />
+                        {nearby.thumbnail.length === 0 ? (
+                          <img src={photo} alt="restaurant" />
+                        ) : (
+                          <img
+                            src={nearby.thumbnail}
+                            alt="nearby restaurants"
+                            className="nearby-pictures"
+                          />
+                        )}
                       </div>
                     </Link>
                   </div>
