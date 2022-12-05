@@ -520,6 +520,27 @@ footer a {
   width: 300px;
   height: 300px;
 }
+.favorite-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin: 20px auto;
+  height: 90vh;
+}
+.favorite-container img {
+  width: 350px;
+  height: 250px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 20px;
+}
+.favorites {
+  width: 30%;
+}
+.favorites-title {
+  width: 95%;
+  margin-bottom: 5px;
+}
 @media only screen and (max-width: 900px) {
   body {
     max-width: 900px;
