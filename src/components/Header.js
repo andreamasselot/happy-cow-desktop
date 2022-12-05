@@ -46,7 +46,7 @@ const Header = (props) => {
         </Link>
         <div className="logo-link">
           <Link to={"/explore"}>Explore</Link>
-          <Link to={"/"}>More</Link>
+          {props.token && <Link to={"/favorites"}>Favorites</Link>}
         </div>
       </nav>
       {props.token ? (

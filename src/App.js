@@ -2,6 +2,7 @@ import "./App.css";
 import "./assets/fonts/stylesheet.css";
 import Cookies from "js-cookie";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Toaster } from "react-hot-toast";
 
 import Header from "./components/Header";
 import Footer from "./components/Footer";
@@ -22,8 +23,10 @@ import {
   faPhone,
   faUser,
   faGlobe,
+  faHeart,
 } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
+import Favorites from "./pages/Favorites";
 library.add(
   faStar,
   faChevronLeft,
@@ -32,7 +35,8 @@ library.add(
   faUser,
   faLocationDot,
   faPhone,
-  faGlobe
+  faGlobe,
+  faHeart
 );
 
 function App() {
@@ -51,13 +55,17 @@ function App() {
   return (
     <Router>
       <Header token={token} handleToken={handleToken} />
+      <div>
+        <Toaster />
+      </div>
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Home token={token} />} />
         <Route path="/offers/:offerId" element={<Place />} />
         <Route path="/offers/restaurant/:offerId" element={<Restaurant />} />
         <Route path="/explore" element={<Explore />} />
         <Route path="/login" element={<Login handleToken={handleToken} />} />
         <Route path="/signup" element={<SignUp handleToken={handleToken} />} />
+        <Route path="/favorites" element={<Favorites token={token} />} />
       </Routes>
       <Footer />
     </Router>

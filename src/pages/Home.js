@@ -5,7 +5,7 @@ import Carroussel from "../components/Carroussel";
 import { Link } from "react-router-dom";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-const Home = () => {
+const Home = (props) => {
   const [data, setData] = useState();
   const [isLoading, setIsLoading] = useState(true);
 
@@ -77,6 +77,7 @@ const Home = () => {
                       address={elem.address}
                       rating={elem.rating}
                       type={elem.type}
+                      token={props.token}
                     />
                   </>
                 );
@@ -112,6 +113,7 @@ const Home = () => {
                       address={elem.address}
                       description={elem.description}
                       rating={elem.rating}
+                      token={props.token}
                     />
                   </>
                 );

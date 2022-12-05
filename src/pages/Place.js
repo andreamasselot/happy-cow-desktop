@@ -86,6 +86,7 @@ const Place = () => {
           )}
 
           <p>{data.description}</p>
+          <button className="add-favorites-button">+ Add to Favorites</button>
         </div>
         <div className="right-section">
           <div className="map-container">

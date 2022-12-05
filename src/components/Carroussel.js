@@ -2,6 +2,8 @@ import vegan from "../assets/img/vegan.svg";
 import vegetarian from "../assets/img/vegetarian.svg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
+import axios from "axios";
+// import { toast } from "react-hot-toast";
 
 const Carroussel = (props) => {
   const stars = [];
@@ -14,8 +16,20 @@ const Carroussel = (props) => {
       stars.push(newStar);
     }
   }
+  const handleFavorite = () => {
+    try {
+      const response = axios.post(
+        "https://site--happycow--fhdp7f7ffy5p.code.run/favorites/create",
+        { placeId: props.id },
+        { headers: { authorization: "Bearer " + props.token } }
+      );
+      console.log(response.data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
   return (
-    <>
+    <div className="elements-container">
       <Link to={`/offers/${props.id}`}>
         <div className="elements">
           <img src={props.image} alt="vegan restaurants" />
@@ -37,7 +51,15 @@ const Carroussel = (props) => {
           <p>{props.description}</p>
         </div>
       </Link>
-    </>
+      <button
+        className="favorite-button"
+        onClick={() => {
+          handleFavorite();
+        }}
+      >
+        <FontAwesomeIcon icon="heart" />
+      </button>
+    </div>
   );
 };
 
