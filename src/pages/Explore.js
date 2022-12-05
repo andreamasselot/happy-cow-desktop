@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
-import { useSearchParams } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 
 const Explore = () => {
   let [searchParams, setSearchParams] = useSearchParams();
@@ -50,11 +50,14 @@ const Explore = () => {
             {data.map((elem) => {
               return (
                 <div className="restaurants-info">
-                  <img
-                    src={elem.thumbnail}
-                    alt="restaurants"
-                    className="explore-images"
-                  />
+                  <Link to={`/offers/${elem.placeId}`}>
+                    <img
+                      src={elem.thumbnail}
+                      alt="restaurants"
+                      className="explore-images"
+                    />
+                  </Link>
+
                   <div className="explore-description">
                     <h3> {elem.name}</h3>
                     <p>{elem.address}</p>

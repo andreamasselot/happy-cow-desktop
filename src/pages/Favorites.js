@@ -50,7 +50,7 @@ const Favorites = (props) => {
       <div className="favorite-container container">
         {favorite.map((elem) => {
           return (
-            <>
+            <section className="favorites-page">
               <Link
                 to={`/offers/${elem.restaurant.placeId}`}
                 className="favorites"
@@ -64,15 +64,17 @@ const Favorites = (props) => {
                   </div>
                 </div>
               </Link>
-              <button
-                className="add-favorites-button"
-                onClick={() => {
-                  handleRemoveFavorite(elem._id);
-                }}
-              >
-                Remove From Favorites
-              </button>
-            </>
+              <div>
+                <button
+                  className="add-favorites-button"
+                  onClick={() => {
+                    handleRemoveFavorite(elem._id);
+                  }}
+                >
+                  Remove From Favorites
+                </button>
+              </div>
+            </section>
           );
         })}
       </div>

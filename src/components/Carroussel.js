@@ -3,7 +3,7 @@ import vegetarian from "../assets/img/vegetarian.svg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
 import axios from "axios";
-// import { toast } from "react-hot-toast";
+import { toast } from "react-hot-toast";
 
 const Carroussel = (props) => {
   const stars = [];
@@ -23,7 +23,7 @@ const Carroussel = (props) => {
         { placeId: props.id },
         { headers: { authorization: "Bearer " + props.token } }
       );
-      console.log(response.data);
+      toast.success("Successfully added to favorites!");
     } catch (error) {
       console.log(error);
     }
@@ -51,14 +51,17 @@ const Carroussel = (props) => {
           <p>{props.description}</p>
         </div>
       </Link>
-      <button
-        className="favorite-button"
-        onClick={() => {
-          handleFavorite();
-        }}
-      >
-        <FontAwesomeIcon icon="heart" />
-      </button>
+
+      {props.token && (
+        <button
+          className="favorite-button"
+          onClick={() => {
+            handleFavorite();
+          }}
+        >
+          <FontAwesomeIcon icon="heart" />
+        </button>
+      )}
     </div>
   );
 };

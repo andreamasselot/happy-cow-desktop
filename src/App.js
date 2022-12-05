@@ -60,7 +60,7 @@ function App() {
       </div>
       <Routes>
         <Route path="/" element={<Home token={token} />} />
-        <Route path="/offers/:offerId" element={<Place />} />
+        <Route path="/offers/:offerId" element={<Place token={token} />} />
         <Route path="/offers/restaurant/:offerId" element={<Restaurant />} />
         <Route path="/explore" element={<Explore />} />
         <Route path="/login" element={<Login handleToken={handleToken} />} />

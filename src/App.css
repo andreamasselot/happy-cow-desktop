@@ -525,8 +525,12 @@ footer a {
   flex-wrap: wrap;
   gap: 30px;
   margin: 20px auto;
+  padding: 20px;
   height: 90vh;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
+
 .favorite-container img {
   width: 350px;
   height: 250px;
@@ -534,6 +538,7 @@ footer a {
   object-position: center;
   border-radius: 20px;
 }
+
 .favorites {
   width: 30%;
 }
@@ -572,6 +577,23 @@ footer a {
   }
   .map-container {
     width: 100%;
+  }
+  .map-container-explore {
+    display: none;
+  }
+  .explore-left {
+    width: 100%;
+  }
+  .vegan-container {
+    justify-content: center;
+  }
+  .explore-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .explore-title h1 {
+    margin-left: 30px;
   }
 }
 @media only screen and (max-width: 500px) {
@@ -614,5 +636,11 @@ footer a {
   }
   .hidden {
     display: none;
+  }
+  .input-banner button {
+    width: 20%;
+  }
+  .banner input {
+    max-width: 40%;
   }
 }

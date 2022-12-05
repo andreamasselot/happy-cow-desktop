@@ -5,10 +5,11 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import vegan from "../assets/img/vegan.svg";
 import vegetarian from "../assets/img/vegetarian.svg";
 import photo from "../assets/img/banner.webp";
+import { toast } from "react-hot-toast";
 
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 
-const Place = () => {
+const Place = (props) => {
   const [data, setData] = useState({ rating: 0 });
   const [isLoading, setIsLoading] = useState(true);
   const { offerId } = useParams();
@@ -23,7 +24,18 @@ const Place = () => {
       stars.push(newStar);
     }
   }
-
+  const handleFavorite = () => {
+    try {
+      const response = axios.post(
+        "https://site--happycow--fhdp7f7ffy5p.code.run/favorites/create",
+        { placeId: data.placeId },
+        { headers: { authorization: "Bearer " + props.token } }
+      );
+      toast.success("Successfully added to favorites!");
+    } catch (error) {
+      console.log(error);
+    }
+  };
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -86,7 +98,16 @@ const Place = () => {
           )}
 
           <p>{data.description}</p>
-          <button className="add-favorites-button">+ Add to Favorites</button>
+          {props.token && (
+            <button
+              onClick={() => {
+                handleFavorite();
+              }}
+              className="add-favorites-button"
+            >
+              + Add to Favorites
+            </button>
+          )}
         </div>
         <div className="right-section">
           <div className="map-container">
