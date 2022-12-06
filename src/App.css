@@ -121,7 +121,6 @@ header {
   gap: 20px;
 }
 .input-banner button {
-  width: 15%;
   background-color: white;
   color: #444444;
   border: none;
@@ -591,7 +590,7 @@ footer a {
     padding: 0px 10px;
   }
   .banner input {
-    max-width: 90%;
+    width: 100%;
   }
   .homepage-section {
     margin: auto;
@@ -696,12 +695,7 @@ footer a {
   .hidden {
     display: none;
   }
-  .input-banner button {
-    width: 20%;
-  }
-  .banner input {
-    max-width: 40%;
-  }
+
   .modal {
     width: 90%;
   }
