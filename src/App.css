@@ -149,6 +149,8 @@ header {
   align-items: center;
   padding: 10px;
   margin-bottom: 10px;
+  flex-wrap: wrap;
+  max-width: 99%;
 }
 .users {
   display: flex;
@@ -587,6 +589,10 @@ footer a {
   }
   .homepage-section {
     margin: auto;
+  }
+  .users-container {
+    max-width: 90%;
+    flex-wrap: wrap;
   }
   .images-container img {
     width: 180px;
