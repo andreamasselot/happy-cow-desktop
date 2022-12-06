@@ -142,6 +142,34 @@ header {
   justify-content: space-between;
   align-items: center;
 }
+.users-container {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  align-items: center;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+.users {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+.users-avatar {
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  object-position: center;
+}
+.users-link {
+  display: flex;
+  max-width: 1200px;
+  justify-content: center;
+  margin-bottom: 20px;
+}
 .elements {
   max-width: 280px;
   margin-bottom: 20px;

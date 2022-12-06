@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 const Community = (props) => {
   const [data, setData] = useState([]);
@@ -9,8 +10,7 @@ const Community = (props) => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          // `https://site--happycow--fhdp7f7ffy5p.code.run/users`
-          `http://localhost:3200/users`
+          `https://site--happycow--fhdp7f7ffy5p.code.run/users`
         );
 
         console.log(response.data);
@@ -26,8 +26,22 @@ const Community = (props) => {
     <p>Loading...</p>
   ) : (
     <>
-      <div>
-        <p>{}</p>
+      <div className="users-container container">
+        {data.map((elem) => {
+          return (
+            <div className="users">
+              <p>{elem.account.username}</p>
+              <img
+                src={elem.account.avatar.secure_url}
+                alt="users avatars"
+                className="users-avatar"
+              />
+            </div>
+          );
+        })}
+      </div>
+      <div className="users-link">
+        <Link to={"/signup"}> Create your account ! </Link>
       </div>
     </>
   );
