@@ -4,8 +4,11 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { toast } from "react-hot-toast";
+import { useState } from "react";
 
 const Carroussel = (props) => {
+  const [style, setStyle] = useState("fav-white");
+
   const stars = [];
   for (let i = 0; i < 5; i++) {
     if (i < props.rating) {
@@ -23,6 +26,7 @@ const Carroussel = (props) => {
         { placeId: props.id },
         { headers: { authorization: "Bearer " + props.token } }
       );
+      setStyle("fav-red");
       toast.success("Successfully added to favorites!");
     } catch (error) {
       console.log(error);
@@ -59,7 +63,7 @@ const Carroussel = (props) => {
             handleFavorite();
           }}
         >
-          <FontAwesomeIcon icon="heart" />
+          <FontAwesomeIcon icon="heart" className={style} />
         </button>
       )}
     </div>
