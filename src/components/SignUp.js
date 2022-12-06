@@ -43,12 +43,16 @@ const SignUp = (props) => {
       props.handleToken(response.data.token);
       const formData = new FormData();
       formData.append("picture", file);
-      await axios.post(`http://localhost:3200/user/upload`, formData, {
-        headers: {
-          authorization: "Bearer " + response.data.token,
-          "Content-Type": "multipart/form-data",
-        },
-      });
+      await axios.post(
+        `https://site--happycow--fhdp7f7ffy5p.code.run/user/upload`,
+        formData,
+        {
+          headers: {
+            authorization: "Bearer " + response.data.token,
+            "Content-Type": "multipart/form-data",
+          },
+        }
+      );
       navigate("/");
     } catch (error) {
       console.error("Error");

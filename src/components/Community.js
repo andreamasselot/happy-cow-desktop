@@ -9,8 +9,10 @@ const Community = (props) => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `https://site--happycow--fhdp7f7ffy5p.code.run/users`
+          // `https://site--happycow--fhdp7f7ffy5p.code.run/users`
+          `http://localhost:3200/users`
         );
+
         console.log(response.data);
         setData(response.data);
         setIsLoading(false);
@@ -25,7 +27,7 @@ const Community = (props) => {
   ) : (
     <>
       <div>
-        <p>Community</p>
+        <p>{}</p>
       </div>
     </>
   );
