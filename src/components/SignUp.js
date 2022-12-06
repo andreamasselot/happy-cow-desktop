@@ -6,6 +6,8 @@ const SignUp = (props) => {
   const [email, setEmail] = useState("");
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [file, setFile] = useState({});
+
   const navigate = useNavigate();
   const handleEmailChange = async (event) => {
     const value = event.target.value;
@@ -19,22 +21,38 @@ const SignUp = (props) => {
     const value = event.target.value;
     setPassword(value);
   };
+  const handleFileChange = async (event) => {
+    const value = event.target.files[0];
+    setFile(value);
+  };
   const handleSubmit = async (event) => {
     event.preventDefault();
-    if (!email || !username || !password) {
-      console.log("missing fields");
-      return;
-    }
-    const response = await axios.post(
-      `https://site--happycow--fhdp7f7ffy5p.code.run/user/signup`,
-      {
-        email: email,
-        username: username,
-        password: password,
+    try {
+      if (!email || !username || !password) {
+        console.log("missing fields");
+        return;
       }
-    );
-    props.handleToken(response.data.token);
-    navigate("/");
+      const response = await axios.post(
+        `https://site--happycow--fhdp7f7ffy5p.code.run/user/signup`,
+        {
+          email: email,
+          username: username,
+          password: password,
+        }
+      );
+      props.handleToken(response.data.token);
+      const formData = new FormData();
+      formData.append("picture", file);
+      await axios.post(`http://localhost:3200/user/upload`, formData, {
+        headers: {
+          authorization: "Bearer " + response.data.token,
+          "Content-Type": "multipart/form-data",
+        },
+      });
+      navigate("/");
+    } catch (error) {
+      console.error("Error");
+    }
   };
   return (
     <>
@@ -88,6 +106,8 @@ const SignUp = (props) => {
                 placeholder="Password"
                 onChange={handlePasswordChange}
               />
+              <label for="profile">Profile Picture</label>
+              <input type="file" name="profile" onChange={handleFileChange} />
               <div className="connexion-button">
                 <button type="submit">Next</button>
               </div>

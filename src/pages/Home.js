@@ -2,9 +2,11 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import Banner from "../components/Banner";
 import Carroussel from "../components/Carroussel";
+import Community from "../components/Community";
 import { Link } from "react-router-dom";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
+
 const Home = (props) => {
   const [data, setData] = useState();
   const [isLoading, setIsLoading] = useState(true);
@@ -123,8 +125,8 @@ const Home = (props) => {
         <section className="container">
           <div className="section-header">
             <h1>Meet the Community</h1>
-            <Link to={"/"}>View All</Link>
           </div>
+          <Community />
         </section>
       </div>
     </>
