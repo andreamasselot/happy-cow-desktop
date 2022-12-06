@@ -41,7 +41,7 @@ const Community = (props) => {
         })}
       </div>
       <div className="users-link">
-        <Link to={"/signup"}> Create your account ! </Link>
+        {!props.token && <Link to={"/signup"}> Create your account ! </Link>}
       </div>
     </>
   );

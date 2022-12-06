@@ -26,7 +26,7 @@ const Place = (props) => {
   }
   const handleFavorite = () => {
     try {
-      const response = axios.post(
+      axios.post(
         "https://site--happycow--fhdp7f7ffy5p.code.run/favorites/create",
         { placeId: data.placeId },
         { headers: { authorization: "Bearer " + props.token } }
