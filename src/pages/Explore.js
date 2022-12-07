@@ -49,7 +49,7 @@ const Explore = () => {
           <div className="vegan-container">
             {data.map((elem) => {
               return (
-                <div className="restaurants-info">
+                <div className="restaurants-info" key={elem.placeId}>
                   <Link to={`/offers/${elem.placeId}`}>
                     <img
                       src={elem.thumbnail}
@@ -80,15 +80,20 @@ const Explore = () => {
 
             {data.map((elem) => {
               return (
-                <Marker position={[elem.location.lat, elem.location.lng]}>
+                <Marker
+                  position={[elem.location.lat, elem.location.lng]}
+                  key={elem.placeId}
+                >
                   <Popup>
-                    <h3>{elem.name}</h3>
-                    <p>{elem.address.split(",")[0]}</p>
-                    <img
-                      src={elem.thumbnail}
-                      alt="restaurants"
-                      className="popup-image"
-                    />
+                    <Link to={`/offers/${elem.placeId}`}>
+                      <h3>{elem.name}</h3>
+                      <p>{elem.address.split(",")[0]}</p>
+                      <img
+                        src={elem.thumbnail}
+                        alt="restaurants"
+                        className="popup-image"
+                      />
+                    </Link>
                   </Popup>
                 </Marker>
               );

@@ -112,6 +112,7 @@ header {
   margin-top: 50px;
   text-shadow: 2px 2px 8px black;
 }
+
 .input-banner {
   display: flex;
   flex-direction: column;
@@ -125,7 +126,7 @@ header {
   color: #444444;
   border: none;
   border-radius: 5px;
-  padding: 5px;
+  padding: 8px 10px;
   font-size: 20px;
   box-shadow: 2px 2px 10px black;
 }
@@ -135,6 +136,10 @@ header {
   flex-direction: column;
   align-items: center;
   gap: 20px;
+}
+.all-page-title {
+  display: flex;
+  gap: 15px;
 }
 .section-header {
   display: flex;
@@ -183,7 +188,7 @@ header {
   position: relative;
 }
 .elements img {
-  height: 200px;
+  height: 170px;
   width: 280px;
   object-fit: cover;
   border-radius: 10px;
@@ -476,6 +481,7 @@ footer a {
   display: flex;
   align-items: center;
   justify-content: center;
+  height: 90vh;
 }
 .connexion-choice {
   display: flex;
@@ -564,6 +570,9 @@ footer a {
   height: 90vh;
   overflow-y: scroll;
   overflow-x: hidden;
+}
+.favorite-container::-webkit-scrollbar {
+  display: none;
 }
 
 .favorite-container img {

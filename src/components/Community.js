@@ -29,7 +29,7 @@ const Community = (props) => {
       <div className="users-container container">
         {data.map((elem) => {
           return (
-            <div className="users">
+            <div className="users" key={elem._id}>
               <p>{elem.account.username}</p>
               <img
                 src={elem.account.avatar.secure_url}
