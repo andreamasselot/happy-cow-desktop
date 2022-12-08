@@ -24,6 +24,7 @@ import {
   faUser,
   faGlobe,
   faHeart,
+  faCircleXmark,
 } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
 import Favorites from "./pages/Favorites";
@@ -36,7 +37,8 @@ library.add(
   faLocationDot,
   faPhone,
   faGlobe,
-  faHeart
+  faHeart,
+  faCircleXmark
 );
 
 function App() {

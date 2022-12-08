@@ -1,3 +1,4 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
@@ -62,6 +63,15 @@ const SignUp = (props) => {
     <>
       <div className="modal-body">
         <section className="modal">
+          <p
+            className="hidden-cross"
+            onClick={() => {
+              props.closeModal();
+              props.closeModal2();
+            }}
+          >
+            <FontAwesomeIcon icon="fa-circle-xmark" />
+          </p>
           <div className="login-left">
             <h2>HappyCow</h2>
             <p>

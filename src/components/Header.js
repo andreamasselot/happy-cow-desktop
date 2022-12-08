@@ -77,6 +77,7 @@ const Header = (props) => {
               handleToken={props.handleToken}
               openModal2={openModal2}
               closeModal={closeModal}
+              closeModal2={closeModal2}
             />
           </Modal>
 
@@ -97,6 +98,7 @@ const Header = (props) => {
               handleToken={props.handleToken}
               openModal={openModal}
               closeModal2={closeModal2}
+              closeModal={closeModal}
             />
           </Modal>
         </div>

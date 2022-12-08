@@ -17,6 +17,9 @@ button {
   max-width: 1200px;
   margin: auto;
 }
+.hidden-cross {
+  display: none;
+}
 h1 {
   font-size: 30px;
   padding: 10px 10px 10px 0px;
@@ -737,5 +740,9 @@ footer a {
   }
   .all-page-title {
     padding: 15px;
+  }
+  .hidden-cross {
+    display: block;
+    font-size: 20px;
   }
 }
