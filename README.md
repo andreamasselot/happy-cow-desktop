@@ -1,6 +1,7 @@
 # HappyCow Replica
 
 [View the final result on netlify](https://happycow-replica.netlify.app)
+There's a Favorites section that you can see once you're connected.
 
 # Getting Started with Create React App
 

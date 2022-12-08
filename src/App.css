@@ -137,10 +137,7 @@ header {
   align-items: center;
   gap: 20px;
 }
-.all-page-title {
-  display: flex;
-  gap: 15px;
-}
+
 .section-header {
   display: flex;
   justify-content: space-between;
@@ -718,5 +715,27 @@ footer a {
   }
   .connexion-choice p {
     font-size: 16px;
+  }
+  .vegan-container {
+    gap: 10px;
+  }
+  .restaurants-info {
+    width: 48%;
+  }
+  .explore-container {
+    padding: 10px;
+  }
+  .explore-title h1 {
+    margin-left: 15px;
+  }
+  .explore-title input {
+    width: 90%;
+  }
+  .all-pictures-container {
+    justify-content: center;
+    overflow-y: visible;
+  }
+  .all-page-title {
+    padding: 15px;
   }
 }
